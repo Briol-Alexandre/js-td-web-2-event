@@ -13,12 +13,19 @@ AIDE : voici les étapes :
 4. On incrémente l'index de 1 pour faire défiler les images
 5. En fin de longueur du tableau, on redémarre au début de l'index
 */
-const sourcesImages = ["img/becode-seal.png", "img/clock.svg", "img/compass.svg", "img/kiss.svg", "img/kiss-wink-heart.svg", "img/lemon.svg", "img/map.svg", "img/bell.svg"];
-let i = 0;
-document.querySelector('.actions').addEventListener('click', (e) => {
-    document.querySelector('img').src = sourcesImages[i];
-    i++;
-    if (i === sourcesImages.length) {
-        i = 0;
+
+const carousel ={
+    sourcesImages : ["img/becode-seal.png", "img/clock.svg", "img/compass.svg", "img/kiss.svg", "img/kiss-wink-heart.svg", "img/lemon.svg", "img/map.svg", "img/bell.svg"],
+    i:0,
+    nextButton:document.querySelector('.actions'),
+    init(){
+        this.nextButton.addEventListener('click', (e) => {
+            document.querySelector('img').src = this.sourcesImages[this.i];
+            this.i++;
+            if (this.i === this.sourcesImages.length) {
+                this.i = 0;
+            }
+        });
     }
-});
+}
+carousel.init();
