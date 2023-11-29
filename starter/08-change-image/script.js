@@ -28,6 +28,8 @@ La méthode classique est de créer une variable temporaire, comme ceci :
 
 
 // version de base
+document.querySelector('img').addEventListener('click', ()=>{
 
+})
 
 // BONUS : switch entre les deux images

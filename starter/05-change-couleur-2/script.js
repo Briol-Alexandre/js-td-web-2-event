@@ -9,8 +9,13 @@ EXERCICE 5 : Change couleur (2) - Colorie la page en fonction des touches press�
     et affiche le message 'Touche … non gérée' s'il presse une autre touche.
 - Méthode : utilise un switch pour gérer les différents cas de touches
 */
-
-
+document.body.addEventListener("keydown", ()=>{
+    switch (press){
+        case "V":
+            document.body.style.background='green';
+            break;
+    }
+})
 
 /* 
 N.B. La méthode de récupération de la touche pressée dans le tutoriel est dépréciée et plus compliquée (on récupère le code de la touche et puis il faut encore y appliquer une fonction pour transformer ce code en lettre) :

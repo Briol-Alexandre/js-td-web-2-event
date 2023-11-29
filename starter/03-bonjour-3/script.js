@@ -6,7 +6,12 @@ Au clic sur le bouton,
 */
 
 
+function direBonjour(){
+    document.querySelector('.display').insertAdjacentHTML("beforeend", '<img src="bonjour.jpg" alt="smiley qui dit bonjour">');
 
+}
+
+document.getElementById('hello').addEventListener('click', direBonjour);
 /*
 Chaque type d'événement est associé à un objet Event spécifique qui fournit des informations sur l'événement via ses propriétés.
 

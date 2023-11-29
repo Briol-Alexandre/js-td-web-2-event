@@ -10,6 +10,27 @@ Au focus sur le champ, vide-le et change sa couleur de fond. Lorsqu'on clique en
 
 // Un seul champ
 
+const inputChange = {
+    inputSelector: document.querySelectorAll('input[type=text]'),
+    init() {
+        this.addEventListeners();
+    },
+    addEventListeners(){
+        for(const input of this.inputSelector) {
+            input.addEventListener('focus', this.focus);
+            input.addEventListener('blur', this.blur);
+        }
+    },
+    focus(e) {
+            e.currentTarget.value = '';
+            e.currentTarget.style.background = 'lavender';
+    },
+    blur(e) {
+            e.currentTarget.value='';
+            e.currentTarget.style.background = 'none'
+    },
+}
+inputChange.init();
 
 // Deux champs
 
